@@ -1,6 +1,0 @@
-{
-  "entrypoint": "app:old_main",
-  "version": "0.2.0",
-  "deploy_key": "REPLACE_ME",
-  "startup_script": "start_server.bat"
-}
