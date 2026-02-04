@@ -1,1 +1,1 @@
-API_KEY = "INVALID"
+API_KEY = "valid_key"
