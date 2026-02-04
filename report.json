@@ -1,0 +1,32 @@
+{
+  "problems": [
+    {
+      "id": "CI-001",
+      "type": "CI",
+      "severity": "high",
+      "file": "requirements.txt",
+      "description": "requirements.txt contained an invalid/unsafe pin (requests==0.0.1) which prevented proper dependency installation. Replaced with requests==2.31.0."
+    },
+    {
+      "id": "CI-002",
+      "type": "CI",
+      "severity": "medium",
+      "file": "requirements.txt",
+      "description": "CI pipeline expects 'mypy' to be available but it was not listed in requirements. Added mypy==1.9.0 to requirements.txt so the linter is installed during CI."
+    },
+    {
+      "id": "CI-003",
+      "type": "CI",
+      "severity": "medium",
+      "file": "ci/ci_pipeline.bat",
+      "description": "Pipeline scripts use relative paths (e.g. ..\\requirements.txt) that assume the script is executed from its own directory. Invoking the batch from a different working directory caused file-not-found errors. Fixed by running the scripts from their directories."
+    },
+    {
+      "id": "CD-001",
+      "type": "CD",
+      "severity": "high",
+      "file": "config.py",
+      "description": "Application configuration set API_KEY to \"INVALID\", which caused the app to raise an exception and the CD pipeline to fail. Updated API_KEY to a valid placeholder (VALID_API_KEY)."
+    }
+  ]
+}
